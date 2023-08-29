@@ -27,7 +27,16 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            
+                            <div class="col-9">
+                                <div class="d-flex align-items-center align-self-start">
+                                    <?php
+
+                                    use App\Models\Product; ?>
+                                    <?php $total_product = product::all()->count(); ?>
+                                    <h3 class="mb-0">{{$total_product}}</h3>
+
+                                </div>
+                            </div>
                             <!-- <div class="col-3">
                                 <div class="icon icon-box-success ">
                                     <span class="mdi mdi-arrow-top-right icon-item"></span>
@@ -42,7 +51,11 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            
+                            <?php
+
+                            use App\Models\Order; ?>
+                            <?php $total_order = order::all()->count(); ?>
+                            <h3 class="mb-0">{{$total_order}}</h3>
                             <!-- <div class="col-3">
                                 <div class="icon icon-box-success">
                                     <span class="mdi mdi-arrow-top-right icon-item"></span>
@@ -57,7 +70,11 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            
+                            <?php
+
+                            use App\Models\User; ?>
+                            <?php $total_user = user::where('usertype', '=', '0')->count(); ?>
+                            <h3 class="mb-0">{{$total_user}}</h3>
                             <!-- <div class="col-3">
                                 <div class="icon icon-box-danger">
                                     <span class="mdi mdi-arrow-bottom-left icon-item"></span>
@@ -72,7 +89,14 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            
+                            <?php $order = order::all(); ?>
+                            <?php $total_revenue = 0;
+
+                            foreach ($order as $order) {
+                                $total_revenue += $order->price;
+                            } ?>
+
+                            <h3 class="mb-0">${{$total_revenue}}</h3>
                             <!-- <div class="col-3">
                                 <div class="icon icon-box-success ">
                                     <span class="mdi mdi-arrow-top-right icon-item"></span>
@@ -88,7 +112,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            
+                            <?php $total_delivered = order::where('delivery_status', '=', 'delivered')->count(); ?>
+                            <h3 class="mb-0">{{$total_delivered}}</h3>
                             <!-- <div class="col-3">
                                 <div class="icon icon-box-success ">
                                     <span class="mdi mdi-arrow-top-right icon-item"></span>
@@ -104,7 +129,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            
+                            <?php $total_processing = order::where('delivery_status', '=', 'processing')->count();?>
+                            <h3 class="mb-0">{{$total_processing}}</h3>
                             <!-- <div class="col-3">
                                 <div class="icon icon-box-success ">
                                     <span class="mdi mdi-arrow-top-right icon-item"></span>

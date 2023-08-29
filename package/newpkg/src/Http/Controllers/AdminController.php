@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Redirect;
 class AdminController extends Controller
 {
     public function home() {
+        
         return view('newpkg::home');
     }
     
