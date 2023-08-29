@@ -3,7 +3,7 @@
 
 <head>
     <!-- Required meta tags -->
-    @include('admin.css');
+    @include('newpkg::css');
 
     <style type="text/css">
         .div_center {
@@ -33,11 +33,11 @@
 </head>
 
 <body>
-    @include('admin.banner');
+    @include('newpkg::banner');
     <!-- partial:partials/_sidebar.html -->
-    @include('admin.sidebar');
+    @include('newpkg::sidebar');
     <!-- partial -->
-    @include('admin.header');
+    @include('newpkg::header');
     <!-- partial -->
     <div class="main-panel">
         <div class="content-wrapper">
@@ -111,10 +111,10 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="vinh/newpkg/admin/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    @include('admin.script');
+    @include('newpkg::script');
 </body>
 
 </html>

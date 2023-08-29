@@ -16,7 +16,7 @@
         @include('newpkg::body');
         <!-- container-scroller -->
         <!-- plugins:js -->
-        <script src="admin/assets/vendors/js/vendor.bundle.base.js"></script>
+        <script src="vinh/newpkg/admin/assets/vendors/js/vendor.bundle.base.js"></script>
         <!-- endinject -->
         <!-- Plugin js for this page -->
         @include('newpkg::script');

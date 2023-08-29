@@ -26,7 +26,7 @@ class AdminController extends Controller
     public function view_category()
     {
         $data = category::all();
-        return view('admin.category', compact('data'));
+        return view('newpkg::category', compact('data'));
     }
 
     public function add_category(Request $request)
@@ -35,7 +35,7 @@ class AdminController extends Controller
         $data->category_name = $request->category;
         $data->save();
 
-        return redirect()->back()->with('message', 'Category Added Successfully');
+        return redirect()->back();
     }
 
     public function delete_category($id)
@@ -44,13 +44,13 @@ class AdminController extends Controller
 
         $data->delete();
 
-        return redirect()->back()->with('message', 'Category Delete Successfully');
+        return redirect()->back();
     }
 
     public function view_product()
     {
         $category = category::all();
-        return view('admin.product', compact('category'));
+        return view('newpkg::product', compact('category'));
     }
 
     public function add_product(Request $request)
@@ -82,27 +82,27 @@ class AdminController extends Controller
 
         $product->save();
 
-        return redirect()->back()->with('message', 'Product Added Successfully');
+        return redirect()->back();
     }
 
     public function show_product()
     {
         $product = product::all();
-        return view('admin.show_product', compact('product'));
+        return view('newpkg::show_product', compact('product'));
     }
 
     public function delete_product($id)
     {
         $product = product::find($id);
         $product->delete();
-        return redirect()->back()->with('message', 'Product Deleted Successfully');
+        return redirect()->back();
     }
 
     public function update_product($id)
     {
         $product = product::find($id);
         $category = category::all();
-        return view('admin.update_product', compact('product', 'category'));
+        return view('newpkg::update_product', compact('product', 'category'));
     }
 
     public function update_product_confirm(Request $request, $id)
@@ -129,7 +129,7 @@ class AdminController extends Controller
 
     public function order() {
         $order = order::all();
-        return view('admin.order', compact('order'));
+        return view('newpkg::order', compact('order'));
     }
 
     public function delivered($id) {
@@ -145,7 +145,7 @@ class AdminController extends Controller
 
         $order = order::where('name', 'LIKE', "%$searchText%")->orWhere('product_title', 'LIKE', "%$searchText%")->get();
 
-        return view('admin.order', compact('order'));
+        return view('newpkg::order', compact('order'));
         
     }
 }
