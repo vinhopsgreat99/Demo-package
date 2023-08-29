@@ -1,7 +1,7 @@
 <?php
 namespace Vinh\Newpkg;
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\ServiceProvider;
 //use Laravel\Fortify\Fortify;
 
