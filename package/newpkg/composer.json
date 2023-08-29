@@ -1,0 +1,19 @@
+{
+    "name": "vinh/newpkg",
+    "description": "This is a new pkg",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vinh\\Newpkg\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}, "extra": {
+        "laravel": {
+            "providers": [
+                "Vinh\\Newpkg\\NewpkgServiceProvider"
+            ]
+        }
+    }
+}
