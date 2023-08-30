@@ -95,8 +95,31 @@
                 <span class="menu-icon">
                     <i class="mdi mdi-playlist-play"></i>
                 </span>
-                <span class="menu-title">Post</span>
+                <span class="menu-title">Order</span>
             </a>
         </li>
+
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="">
+                <span class="menu-icon">
+                    <i class="mdi mdi-playlist-play"></i>
+                </span>
+                <span class="menu-title">Create Post</span>
+            </a>
+        </li>
+
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="">
+                <span class="menu-icon">
+                    <i class="mdi mdi-playlist-play"></i>
+                </span>
+                <span class="menu-title">View Post</span>
+            </a>
+        </li>
+
+        
+
+        
+
     </ul>
 </nav>

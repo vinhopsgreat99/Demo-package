@@ -142,6 +142,23 @@
                 </div>
             </div>
 
+            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <?php $total_delivery_failed = order::where('delivery_status', '=', 'delivery failed')->count();?>
+                            <h3 class="mb-0">{{$total_delivery_failed}}</h3>
+                            <!-- <div class="col-3">
+                                <div class="icon icon-box-success ">
+                                    <span class="mdi mdi-arrow-top-right icon-item"></span>
+                                </div>
+                            </div> -->
+                        </div>
+                        <h6 class="text-muted font-weight-normal">Order Failed</h6>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
