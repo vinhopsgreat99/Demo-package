@@ -38,6 +38,10 @@ Route::get('/delivered/{id}', [AdminController::class, 'delivered']);
 
 Route::get('/search', [AdminController::class, 'searchdata']);
 
+Route::get('/view_post', [AdminController::class, 'view_post']);
 
+Route::post('/add_post', [AdminController::class, 'add_post']);
+
+Route::get('/show_post', [AdminController::class, 'show_post']);
 
 ?>

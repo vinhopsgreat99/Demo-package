@@ -13,6 +13,11 @@ use App\Models\Product;
 
 use App\Models\Order;
 
+use App\Models\Post;
+
+use App\Models\User;
+
+
 use Illuminate\Support\Facades\Redirect;
 
 
@@ -56,6 +61,7 @@ class AdminController extends Controller
 
     public function add_product(Request $request)
     {
+       
         $product = new product;
 
         $product->title = $request->title;
@@ -148,6 +154,31 @@ class AdminController extends Controller
 
         return view('newpkg::order', compact('order'));
         
+    }
+
+    public function view_post()
+    {
+        //$post = post::all();
+        $user = user::where('usertype', '=', '1')->count();
+        return view('newpkg::add_post', compact('user'));
+    }
+
+    public function add_post(Request $request) {
+        
+        $post = new post;
+
+        $post->title = $request->title;
+
+        $post->description = $request->description;
+
+        $post->author = "Admin";
+
+        $post->content = $request->content;
+        
+
+        $post->save();
+
+        return redirect()->back();
     }
 }
 

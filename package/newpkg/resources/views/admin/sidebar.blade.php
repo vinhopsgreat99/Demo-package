@@ -100,7 +100,7 @@
         </li>
 
         <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{url('view_post')}}">
                 <span class="menu-icon">
                     <i class="mdi mdi-playlist-play"></i>
                 </span>
