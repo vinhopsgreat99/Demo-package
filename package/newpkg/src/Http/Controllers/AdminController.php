@@ -180,6 +180,39 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
+    public function show_post() {
+        $post = post::all();
+        return view('newpkg::show_post', compact('post'));
+    }
+
+    public function delete_post($id)
+    {
+        $post = post::find($id);
+        $post->delete();
+        return redirect()->back();
+    }
+
+    public function update_post($id)
+    {
+        $post = post::find($id);
+        
+        return view('newpkg::update_post', compact('post'));
+    }
+
+    public function update_post_confirm(Request $request, $id)
+    {
+        $post = post::find($id);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->author = $request->author;
+        $post->content = $request->content;
+
+        $post->save();
+
+        return redirect()->back();
+    }
+
 }
 
 
