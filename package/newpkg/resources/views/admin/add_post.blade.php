@@ -72,7 +72,7 @@
                     <div class="div_design">
                         <label>Content: </label>
                         
-                        <textarea class="summernote" rows="10" cols="60" name="content"></textarea>
+                        <textarea class="text_color" rows="10" cols="60" name="content"></textarea>
                     </div>
 
                     <!-- <div class="div_design">

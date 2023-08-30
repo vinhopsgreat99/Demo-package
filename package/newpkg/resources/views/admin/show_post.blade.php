@@ -54,7 +54,7 @@
     <div class="main-panel">
         <div class="content-wrapper">
 
-            <h2 class="font_size">All Products</h2>
+            <h2 class="font_size">All Posts</h2>
 
             <table class="center">
                 <tr class="first_row">
@@ -72,7 +72,7 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->description}}</td>
                     <td>{{$post->author}}</td>
-                    <td>{{$post->content}}</td>
+                    <td><textarea class="text_color" rows="5" cols="60" name="content">{{$post->content}}</textarea></td>
 
                     <td>
                         <a class="btn btn-danger" onclick="return confirm('Are You Sure To Delete This Product')" href="{{url('delete_post', $post->id)}}">Delete</a>

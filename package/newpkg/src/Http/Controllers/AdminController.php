@@ -205,7 +205,6 @@ class AdminController extends Controller
         $post = post::find($id);
         $post->title = $request->title;
         $post->description = $request->description;
-        $post->author = $request->author;
         $post->content = $request->content;
 
         $post->save();
